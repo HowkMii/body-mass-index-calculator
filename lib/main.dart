@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'home.dart';
+import 'result.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Body Mass Index Calculator'),
+      home: const Result(age: 34, isMale: false, result: 34,),
     );
   }
 }

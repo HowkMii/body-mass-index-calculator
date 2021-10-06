@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-class Result extends StatelessWidget {
-  const Result({ Key? key }) : super(key: key);
 
+
+class Result extends StatelessWidget {
+  const Result({ Key? key,
+    required this.result,
+    required this.isMale,
+    required this.age }) : super(key: key);
+  final double result;
+  final bool isMale;
+  final int age; 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,8 +18,8 @@ class Result extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
-            children: const[
-              Text('Male'),
+            children: [
+              Text('Gender: ${isMale?'Male':'Female'}',style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold),),
             ],
           ),
         ),),
