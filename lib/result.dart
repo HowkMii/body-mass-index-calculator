@@ -8,7 +8,14 @@ class Result extends StatelessWidget {
       appBar: AppBar(
         title:const Text('Resullt'),
       ),
-      
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: const[
+              Text('Male'),
+            ],
+          ),
+        ),),
     );
   }
 }
