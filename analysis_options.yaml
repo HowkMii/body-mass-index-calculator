@@ -3,5 +3,8 @@ include: package:flutter_lints/flutter.yaml
 
 
 Liner:
-  reules:
-    curly_braces_in_flow_control_structures
+  rules:
+    curly_braces_in_flow_control_structures:  false
+analyzer:
+  errors:
+    curly_braces_in_flow_control_structures:  error
