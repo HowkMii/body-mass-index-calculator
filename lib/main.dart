@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         textTheme: TextTheme(
           headline2: TextStyle(fontSize: 34,fontWeight: FontWeight.bold, color: Colors.white),
         ),
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.lime,
         canvasColor: Colors.black38
       ),
       
