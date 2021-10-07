@@ -21,15 +21,18 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:const Text('Resullt'),
+        
+        title:Center(child: const Text('Resullt')),
       ),
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text('Gender: ${isMale?'Male':'Female'}',style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold),),
-              Text('Result: ${result.toStringAsFixed(2)}',style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold),),
-              Text('Healthiness: ${result.toStringAsFixed(2)}',style: TextStyle(fontSize: 34,fontWeight: FontWeight.bold),),
+              Text('Gender: ${isMale?'Male':'Female'}',style: Theme.of(context).textTheme.headline2),
+              Text('Result: ${result.toStringAsFixed(2)}',style: Theme.of(context).textTheme.headline2),
+              Text('Healthiness: ${resultPhrase}',style: Theme.of(context).textTheme.headline2),
+              Text('Age: ${age}',style:Theme.of(context).textTheme.headline2),
 
             ],
           ),
