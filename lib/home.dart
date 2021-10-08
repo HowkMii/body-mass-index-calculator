@@ -14,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  bool isMale = true;
+  bool isMale = false;
   double heightVal=170;
   int weight = 55;
   int age =180;
@@ -31,12 +31,12 @@ class _MyHomePageState extends State<MyHomePage> {
             child:GestureDetector(
               onTap: (){
                 setState(() {
-                  
+                  isMale=true;
                 });
               },
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),color: Colors.blueGrey
+                  borderRadius: BorderRadius.circular(10),color:isMale? Colors.teal: Colors.blueGrey
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
