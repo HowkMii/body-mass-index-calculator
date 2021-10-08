@@ -45,13 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return Expanded(
           child:GestureDetector(
             onTap: (){
-              setState(() {
-                isMale=true;
-              });
+              setState(() => isMale = type=='male'? true:false);
             },
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),color:isMale? Colors.teal: Colors.blueGrey
+                borderRadius: BorderRadius.circular(10),color:(isMale && type=='male')||(!isMale && type=='female')? Colors.teal: Colors.blueGrey
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
