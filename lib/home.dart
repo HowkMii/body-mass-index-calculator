@@ -1,5 +1,9 @@
 
+
+
+
 import 'package:flutter/material.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key,}) : super(key: key);
@@ -10,6 +14,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool isMale = true;
+  double heightVal=170;
+  int weight = 55;
+  int age =180;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,13 +27,29 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              Text('You have pushed to button this many times'),
-            ],
-      
+          child: Expanded(
+            child:GestureDetector(
+              onTap: (){
+                setState(() {
+                  
+                });
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),color: Colors.blueGrey
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(Icons.male),
+                    const SizedBox(height: 15,),
+                    Text('Male',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.white))
+                  ],
+                ),
+              ),
+            ) ,
           ),
+         
         ),
       ),// This trailing comma makes auto-formatting nicer for build methods.
     );
