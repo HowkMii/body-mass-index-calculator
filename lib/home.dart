@@ -27,31 +27,42 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SafeArea(
         child: Center(
-          child: Expanded(
-            child:GestureDetector(
-              onTap: (){
-                setState(() {
-                  isMale=true;
-                });
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),color:isMale? Colors.teal: Colors.blueGrey
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.male),
-                    const SizedBox(height: 15,),
-                    Text('Male',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.white))
-                  ],
-                ),
-              ),
-            ) ,
+          child: Row(
+            children: [
+              m1Exp('male'),
+              const SizedBox(width: 15,),
+              m1Exp('female'),
+              
+            ],
           ),
          
         ),
       ),// This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  Expanded m1Exp(String type) {
+    return Expanded(
+          child:GestureDetector(
+            onTap: (){
+              setState(() {
+                isMale=true;
+              });
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),color:isMale? Colors.teal: Colors.blueGrey
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                   Icon(type=='male'?Icons.male:Icons.female),
+                  const SizedBox(height: 15,),
+                  Text(type=='male'?'Male':'Female',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.white))
+                ],
+              ),
+            ),
+          ) ,
+        );
   }
 }
