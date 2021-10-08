@@ -11,10 +11,15 @@ class Result extends StatelessWidget {
   final int age; 
   String get resultPhrase{
     String resultText ='';
-    if (result>=30) resultText ="Obse"; 
-    else if (result>25 && result <30) resultText ="OverWeight"; 
-    else if (result>=18.5 && result <=24.9 ) resultText ="Normal"; 
-    else  resultText ="Thin"; 
+    if (result>=30) {
+      resultText ="Obse";
+    } else if (result>25 && result <30) {
+      resultText ="OverWeight";
+    } else if (result>=18.5 && result <=24.9 ) {
+      resultText ="Normal";
+    } else {
+      resultText ="Thin";
+    } 
     return resultText;
   }
   @override
