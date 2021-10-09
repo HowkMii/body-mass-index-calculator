@@ -46,11 +46,26 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal:20.0),
               child:  Container(
+                 decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),color:Colors.blueGrey
+            ),
                 child: Column(
+                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('data'),
-                    Row(children: [],),
-                    Slider(value: heightVal, onChanged: (newVal){})
+                    Text('Height',style: Theme.of(context).textTheme.headline2,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                      Text(heightVal.toStringAsFixed(2),style: Theme.of(context).textTheme.headline1,),
+                      Text('CM',style: Theme.of(context).textTheme.bodyText1,)
+                    ],),
+                    Slider(
+                      min: 90,
+                      max: 220,
+                      value: heightVal, 
+                      onChanged: (newVal)=> setState(() => heightVal=newVal))
                   ],
                 ),
               )
