@@ -2,6 +2,7 @@
 
 
 
+import 'package:bmi/result.dart';
 import 'package:flutter/material.dart';
 
 
@@ -28,7 +29,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:[ Expanded(
+          children:[ 
+          Expanded(
             
             child: Padding(
               padding: const EdgeInsets.all(20.0),
@@ -56,6 +58,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
+          Container(
+            color:Colors.teal ,
+            width: double.infinity,
+            height: MediaQuery.of(context).size.height/12,
+            child: TextButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> Result(result:92,isMale: isMale,age: age,))
+            );
+            }, 
+            child: Text('Calculate',style: Theme.of(context).textTheme.headline2,))),
           ],
         ),
       ),// This trailing comma makes auto-formatting nicer for build methods.
