@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   Icon(type=='male'?Icons.male:Icons.female),
+                   Icon(type=='male'?Icons.male:Icons.female,size: 90,),
                   const SizedBox(height: 15,),
                   Text(type=='male'?'Male':'Female',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.white))
                 ],
@@ -96,11 +96,24 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                  Text(type=='age'?'Age':'Weight',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.black)),
                 const SizedBox(height: 15,),
-                Text(type=='age'?'$age':'$weight',style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold, color: Colors.white)),
+                Text(type=='age'?'$age':'$weight',style: TextStyle(fontSize: 45,fontWeight: FontWeight.w800, color: Colors.white)),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     FloatingActionButton(
-                      onPressed: (){},
+                      heroTag: type=='age'?'age--':'weight--',
+                      onPressed: (){
+                        setState(() => type=='age'? age--:weight--);
+                      },
+                      child: Icon(Icons.remove),
+                      mini: true,
+
+                      ),
+                    FloatingActionButton(
+                      heroTag: type=='age'?'age++':'weight++',
+                      onPressed: (){
+                        setState(() => type=='age'? age++:weight++);
+                      },
                       child: Icon(Icons.add),
                       mini: true,
 

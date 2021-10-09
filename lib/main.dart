@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Body Mass Index Calculator',
       theme: ThemeData(
-        iconTheme: const IconThemeData(color:Colors.white,size: 90 ),
+        iconTheme: const IconThemeData(color:Colors.white,),
         textTheme: const TextTheme(
           headline2: TextStyle(fontSize: 34,fontWeight: FontWeight.bold, color: Colors.white),
         ),
