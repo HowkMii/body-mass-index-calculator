@@ -38,13 +38,12 @@ class _splashState extends State<Splash> {
               ),
             ),
             Center(
-              
                     child: Image.asset(
                       "assets/bmi.jpg",
+                      height: 200,
+                      width: 200,
                       
                     ),
-                  
-                
             ),
             Positioned(
               bottom: 50.0,
@@ -77,10 +76,7 @@ class _splashState extends State<Splash> {
                 ],
               ),
             ),
-            
-               
-              
-            
+
           ],
         ),
       ),
