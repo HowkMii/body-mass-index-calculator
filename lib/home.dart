@@ -44,6 +44,21 @@ class _MyHomePageState extends State<MyHomePage> {
           Expanded(
             
             child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal:20.0),
+              child:  Container(
+                child: Column(
+                  children: [
+                    Text('data'),
+                    Row(children: [],),
+                    Slider(value: heightVal, onChanged: (newVal){})
+                  ],
+                ),
+              )
+            ),
+          ),
+          Expanded(
+            
+            child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Row(
                 children: [
