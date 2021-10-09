@@ -26,18 +26,27 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
-        title:Center(child: const Text('Resullt')),
+        centerTitle: true,
+        title:const Text('Resullt'),
       ),
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Gender: ${isMale?'Male':'Female'}',style: Theme.of(context).textTheme.headline3,textAlign: TextAlign.center,),
-              Text('Result: ${result.toStringAsFixed(2)}',style: Theme.of(context).textTheme.headline3,textAlign: TextAlign.center),
-              Text('Healthiness: ${resultPhrase}',style: Theme.of(context).textTheme.headline3,textAlign: TextAlign.center),
-              Text('Age: ${age}',style:Theme.of(context).textTheme.headline3,textAlign: TextAlign.center),
+              Text(
+                'Gender: ${isMale?'Male':'Female'}',
+                style: Theme.of(context).textTheme.headline4,
+                textAlign: TextAlign.center,),
+              Text('Result: ${result.toStringAsFixed(2)}',
+              style: Theme.of(context).textTheme.headline4,
+              textAlign: TextAlign.center),
+              Text('Healthiness: ${resultPhrase}',
+                style: Theme.of(context).textTheme.headline5,
+                textAlign: TextAlign.center),
+              Text('Age: ${age}',
+              style:Theme.of(context).textTheme.headline4,
+              textAlign: TextAlign.center),
 
             ],
           ),

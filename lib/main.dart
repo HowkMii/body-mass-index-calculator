@@ -1,3 +1,4 @@
+import 'package:bmi/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'home.dart';
 
@@ -17,16 +18,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         iconTheme: const IconThemeData(color:Colors.white,),
         textTheme: const TextTheme(
-          headline2: TextStyle(fontSize: 28,fontWeight: FontWeight.bold, color: Colors.black),
+          headline2: TextStyle(fontSize: 28,fontWeight: FontWeight.bold, color: Colors.teal),
+
+          headline5: TextStyle(fontSize: 30,fontWeight: FontWeight.bold, color: Colors.red),
+          headline4: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.black87),
           headline3: TextStyle(fontSize: 28,fontWeight: FontWeight.bold, color: Colors.white),
           headline1: TextStyle(fontSize: 40,fontWeight: FontWeight.bold, color: Colors.white),
-          bodyText1: TextStyle(fontSize: 20,fontWeight: FontWeight.bold, color: Colors.black),
+          bodyText1: TextStyle(fontSize: 20,fontWeight: FontWeight.bold, color: Colors.teal),
         ),
         primarySwatch: Colors.teal,
-        canvasColor: Colors.black38
+        canvasColor: Colors.white
       ),
       
-      home: const MyHomePage(),
+      home:  Splash(),
     );
   }
 }

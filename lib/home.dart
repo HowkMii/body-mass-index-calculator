@@ -21,7 +21,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Body Mass Index')),
+        centerTitle: true,
+        title: const Text('Body Mass Index'),
       ),
       body: SafeArea(
         child: Column(
@@ -47,8 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.symmetric(horizontal:20.0),
               child:  Container(
                  decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),color:Colors.blueGrey
-            ),
+                  borderRadius: BorderRadius.circular(10),color:Colors.black87
+                ),
                 child: Column(
                    mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -85,16 +86,19 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ),
-          Container(
-            color:Colors.teal ,
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height/12,
-            child: TextButton(onPressed: (){
-              var result=weight/pow(heightVal/100,2);
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>  Result(result: result,isMale: isMale,age: age,))
-            );
-            }, 
-            child: Text('Calculate',style: Theme.of(context).textTheme.headline2,))),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal:20.0),
+            child: Container(
+              width: double.infinity,
+              color:Colors.teal ,
+              height: MediaQuery.of(context).size.height/12,
+              child: TextButton(onPressed: (){
+                var result=weight/pow(heightVal/100,2);
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>  Result(result: result,isMale: isMale,age: age,))
+              );
+              }, 
+              child: Text('Calculate',style: Theme.of(context).textTheme.headline4,))),
+          ),
           ],
         ),
       ),// This trailing comma makes auto-formatting nicer for build methods.
@@ -109,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),color:(isMale && type=='male')||(!isMale && type=='female')? Colors.teal: Colors.blueGrey
+                borderRadius: BorderRadius.circular(10),color:(isMale && type=='male')||(!isMale && type=='female')? Colors.teal: Colors.black87
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -128,14 +132,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Expanded(
           child:Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),color:Colors.blueGrey
+              borderRadius: BorderRadius.circular(10),color:Colors.black87
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 Text(type=='age'?'Age':'Weight',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.black)),
-                const SizedBox(height: 15,),
-                Text(type=='age'?'$age':'$weight',style: TextStyle(fontSize: 45,fontWeight: FontWeight.w800, color: Colors.white)),
+                 Text(type=='age'?'Age':'Weight',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold, color: Colors.teal)),
+                const SizedBox(height: 5,),
+                Text(type=='age'?'$age':'$weight',style: TextStyle(fontSize: 50,fontWeight: FontWeight.w800, color: Colors.white)),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
