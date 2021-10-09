@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool isMale = false;
   double heightVal=170;
   int weight = 55;
-  int age =180;
+  int age =18;
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +26,37 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Center(child: const Text('Body Mass Index')),
       ),
       body: SafeArea(
-        child: Center(
-          child: Row(
-            children: [
-              m1Exp('male'),
-              const SizedBox(width: 15,),
-              m1Exp('female'),
-              
-            ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children:[ Expanded(
+            
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: [
+                  m1Exp('male'),
+                  const SizedBox(width: 15,),
+                  m1Exp('female'),
+                  
+                ],
+              ),
+            ),
           ),
-         
+          Expanded(
+            
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: [
+                  m2Exp('weight'),
+                  const SizedBox(width: 15,),
+                  m2Exp('age'),
+                  
+                ],
+              ),
+            ),
+          ),
+          ],
         ),
       ),// This trailing comma makes auto-formatting nicer for build methods.
     );
@@ -62,5 +83,34 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ) ,
         );
+        
+  }
+  Expanded m2Exp(String type) {
+    return Expanded(
+          child:Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),color:Colors.blueGrey
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                 Text(type=='age'?'Age':'Weight',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.black)),
+                const SizedBox(height: 15,),
+                Text(type=='age'?'$age':'$weight',style: TextStyle(fontSize: 35,fontWeight: FontWeight.bold, color: Colors.white)),
+                Row(
+                  children: [
+                    FloatingActionButton(
+                      onPressed: (){},
+                      child: Icon(Icons.add),
+                      mini: true,
+
+                      ),
+                  ],
+                )
+              ],
+            ),
+          ) ,
+        );
+        
   }
 }
