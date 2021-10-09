@@ -1,7 +1,4 @@
-
-
-
-
+import 'dart:math';
 import 'package:bmi/result.dart';
 import 'package:flutter/material.dart';
 
@@ -63,7 +60,8 @@ class _MyHomePageState extends State<MyHomePage> {
             width: double.infinity,
             height: MediaQuery.of(context).size.height/12,
             child: TextButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> Result(result:92,isMale: isMale,age: age,))
+              var result=weight/pow(heightVal/100,2);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>  Result(result: result,isMale: isMale,age: age,))
             );
             }, 
             child: Text('Calculate',style: Theme.of(context).textTheme.headline2,))),
@@ -108,6 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                  Text(type=='age'?'Age':'Weight',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold, color: Colors.black)),
                 const SizedBox(height: 15,),
                 Text(type=='age'?'$age':'$weight',style: TextStyle(fontSize: 45,fontWeight: FontWeight.w800, color: Colors.white)),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -120,6 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       mini: true,
 
                       ),
+                    const  SizedBox(width: 8,),
                     FloatingActionButton(
                       heroTag: type=='age'?'age++':'weight++',
                       onPressed: (){
