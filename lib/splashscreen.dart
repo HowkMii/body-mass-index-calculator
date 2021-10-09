@@ -7,7 +7,6 @@ class Splash extends StatefulWidget {
   @override
   _splashState createState() => _splashState();
 }
- 
 class _splashState extends State<Splash> {
   @override
   void initState() {
@@ -29,12 +28,10 @@ class _splashState extends State<Splash> {
         child: Stack(
           children: <Widget>[
             Container(
-              
               decoration: BoxDecoration(
-                
-          gradient: LinearGradient(colors: [Colors.white,Colors.white],
-          end: Alignment.bottomCenter,
-          begin: Alignment.topCenter)
+              gradient: LinearGradient(colors: [Colors.white,Colors.white],
+              end: Alignment.bottomCenter,
+              begin: Alignment.topCenter)
               ),
             ),
             Center(
@@ -42,7 +39,6 @@ class _splashState extends State<Splash> {
                       "assets/bmi.jpg",
                       height: 200,
                       width: 200,
-                      
                     ),
             ),
             Positioned(
